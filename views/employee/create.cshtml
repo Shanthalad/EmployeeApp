@@ -1,0 +1,52 @@
+@model EmployeeApp.Models.Employee
+
+<h2>Add Employee</h2>
+
+<form method="post" onsubmit="return validateForm();">
+    <label>Name</label><br />
+    <input type="text" id="Name" name="Name" /><br /><br />
+
+    <label>Email</label><br />
+    <input type="text" id="Email" name="Email" /><br /><br />
+
+    <label>Salary</label><br />
+    <input type="text" id="Salary" name="Salary" /><br /><br />
+
+    <input type="submit" value="Save" />
+</form>
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+<script>
+    function validateForm() {
+
+        if ($("#Name").val() == "") {
+            alert("Name is required");
+            return false;
+        }
+
+        if ($("#Email").val() == "") {
+            alert("Email is required");
+            return false;
+        }
+
+      if ($("#Email").val().indexOf(".") === -1 || $("#Email").val().indexOf("@@") === -1) 
+    {
+    alert("Invalid email format");
+    return false;
+        }
+
+
+        if ($("#Salary").val() == "") {
+            alert("Salary is required");
+            return false;
+        }
+
+        if (isNaN($("#Salary").val())) {
+            alert("Salary must be numeric");
+            return false;
+        }
+
+        return true;
+    }
+</script>
