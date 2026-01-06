@@ -71,7 +71,7 @@ Run the application:
 dotnet run
 
 Open browser and navigate to:
-http://localhost:5000
+http://localhost:5231
 or the port shown in the terminal.
 
 📝 Notes
